@@ -1,0 +1,8 @@
+<h2>Novo Contato</h2>
+<form (ngSubmit)="salvar()">
+  <input [(ngModel)]="contato.nome" name="nome" placeholder="Nome" required />
+  <input [(ngModel)]="contato.email" name="email" placeholder="Email" />
+  <input [(ngModel)]="contato.celular" name="celular" placeholder="Celular" required />
+  <input [(ngModel)]="contato.telefone" name="telefone" placeholder="Telefone" />
+  <button type="submit">Salvar</button>
+</form>

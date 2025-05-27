@@ -1,0 +1,26 @@
+<h2>Contatos</h2>
+<form (ngSubmit)="buscar()">
+  <input [(ngModel)]="filtro.nome" name="nome" placeholder="Nome" />
+  <input [(ngModel)]="filtro.email" name="email" placeholder="Email" />
+  <input [(ngModel)]="filtro.celular" name="celular" placeholder="Celular" />
+  <button type="submit">Buscar</button>
+  <button type="button" (click)="listar()">Limpar</button>
+</form>
+<table>
+  <tr>
+    <th>Nome</th><th>Email</th><th>Celular</th><th>Telefone</th><th>Favorito</th><th>Ações</th>
+  </tr>
+  <tr *ngFor="let contato of contatos">
+    <td>{{ contato.nome }}</td>
+    <td>{{ contato.email }}</td>
+    <td>{{ contato.celular }}</td>
+    <td>{{ contato.telefone }}</td>
+    <td>{{ contato.favorito }}</td>
+    <td>
+      <button (click)="marcarFavorito(contato)">Favoritar</button>
+      <button (click)="desmarcarFavorito(contato)">Desfavoritar</button>
+      <button (click)="inativar(contato)">Inativar</button>
+      <button (click)="excluir(contato)">Excluir</button>
+    </td>
+  </tr>
+</table>
